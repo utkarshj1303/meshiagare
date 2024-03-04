@@ -2,8 +2,8 @@ import { type Metadata } from 'next'
 import { notFound, redirect } from 'next/navigation'
 
 import { auth } from '@/auth'
-import { getChat } from '@/app/actions'
-import { Chat } from '@/components/chat'
+import { getChat, getAllPinsForGroup } from '@/app/actions'
+import ChatAndMapPage from '@/components/chat-and-map-page'
 
 export interface ChatPageProps {
   params: {
@@ -20,7 +20,7 @@ export async function generateMetadata({
     return {}
   }
 
-  const chat = await getChat(params.id, session.user.id)
+  const {chat, _} = await getChat(params.id, session.user.id)
   return {
     title: chat?.title.toString().slice(0, 50) ?? 'Chat'
   }
@@ -33,15 +33,19 @@ export default async function ChatPage({ params }: ChatPageProps) {
     redirect(`/sign-in?next=/chat/${params.id}`)
   }
 
-  const chat = await getChat(params.id, session.user.id)
+  const chatData = await getChat(params.id, session.user.id)
 
-  if (!chat) {
+  if (!chatData) {
     notFound()
   }
+
+  const {chat, groupChatDetails} = chatData;
 
   if (chat?.userId !== session?.user?.id) {
     notFound()
   }
+  return (
+    <ChatAndMapPage id={chat.id} initialMessages={chat.messages} groupChatDetailsId={chat.groupChatDetailsId} user={session.user} location={groupChatDetails.location}/>
+  );
 
-  return <Chat id={chat.id} initialMessages={chat.messages} />
 }

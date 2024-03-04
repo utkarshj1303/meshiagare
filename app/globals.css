@@ -66,6 +66,15 @@
 
     --ring: 240 3.7% 15.9%;
   }
+
+  .scrollbar-hidden {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @layer base {
