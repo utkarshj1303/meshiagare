@@ -181,6 +181,7 @@ export default function GoogleMaps({groupChatDetailsId, user, location}) {
     });
   };
   
+  
   const InfoWindowContent = ({ place, pinId, reason, numRatingOptions }) => {
     return (
       <div className="max-w-sm mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
