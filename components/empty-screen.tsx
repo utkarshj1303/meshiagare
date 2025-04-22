@@ -5,10 +5,10 @@ import { ExternalLink } from '@/components/external-link'
 import { IconArrowRight } from '@/components/ui/icons'
 
 const exampleMessages = [
-  {
-    heading: 'It\'s 1AM and we want some cookies, help?',
-    message: 'It\'s 1AM and we want some cookies, help?'
-  },
+//  {
+//    heading: 'It\'s 1AM and we want some cookies, help?',
+//    message: 'It\'s 1AM and we want some cookies, help?'
+//  },
   {
     heading: 'Where can I get some vegetarian pho?',
     message: 'Where can I get some vegetarian pho?'
@@ -22,17 +22,17 @@ const exampleMessages = [
     message: 'Lowkey places for a team lunch which is gluten free?'
   },
   {
-    heading: 'I want to find a place with view for my aniversary, what are my options?',
-    message: 'I want to find a place with view for my aniversary, what are my options?'
+    heading: 'I want to find a place with a view for my aniversary, what are my options?',
+    message: 'I want to find a place with a view for my aniversary, what are my options?'
   },
   {
     heading: 'Help us find a bottomless brunch place?',
     message: 'Help us find a bottomless brunch place?'
   },
-  {
-    heading: 'IDK, HELP ME DECIDE!',
-    message: `I need help deciding. Can you suggest some new and trending restaurants and some lesser known hidden gems?`
-  }
+//  {
+//    heading: 'IDK, HELP ME DECIDE!',
+//    message: `I need help deciding. Can you suggest some new and trending restaurants and some lesser known hidden gems?`
+//  }
 ]
 
 export function EmptyScreen({ setInput, isSignInPage }: Pick<UseChatHelpers, 'setInput'>) {

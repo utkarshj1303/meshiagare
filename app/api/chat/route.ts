@@ -617,7 +617,7 @@ async function askTheSearchAI(searchQuery: string): Promise<any> {
         {"role": "user", "content": searchQuery}];
   try {
     const perplexity_response = await perplexity.chat.completions.create({
-      model: 'llama-3-sonar-large-32k-online',
+      model: 'sonar',
       stream: false,
       top_p: 0.8,
       presence_penalty: 1.0,
